@@ -1,7 +1,7 @@
 //Define Margin
 var margin = {left: 80, right: 80, top: 50, bottom: 50 }, 
-    width = (960 * 1) - margin.left -margin.right,
-    height = (500 * 2) - margin.top - margin.bottom;
+    width = (960 * .8) - margin.left -margin.right,
+    height = (500 * 1.5) - margin.top - margin.bottom;
 
 // SVG Legend
 var svgLegend = d3.select("body")
@@ -28,7 +28,7 @@ var svgIncome = svg.append("g")
 var projection = d3.geoMercator()
                     .center([137, 34])
 				    .translate([width/2, height/2])
-				    .scale([1900]);
+				    .scale([1400]);
 
 //Define path generator
 var path = d3.geoPath()
