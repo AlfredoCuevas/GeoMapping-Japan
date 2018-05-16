@@ -170,7 +170,7 @@ d3.csv("PopulationDensity.csv", function(data) {
                 .attr("text-anchor", "middle")
                 .attr("fill", "black")
                 .attr("font-size", "12px")
-                .text("Population Density (per km2)");
+                .text("2015 Population Density (per km2)");
         
         // Legend2 IncomePerCapita
         svgLegend.append("g")
@@ -194,7 +194,7 @@ d3.csv("PopulationDensity.csv", function(data) {
                 .attr("text-anchor", "middle")
                 .attr("fill", "black")
                 .attr("font-size", "12px")
-                .text("Income Per Capita (Ten-thousand Yen)");
+                .text("2016 Income Per Capita (Ten-thousand Yen)");
         
         
         
