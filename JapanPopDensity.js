@@ -70,7 +70,7 @@ d3.csv("PopulationDensity.csv", function(data) {
     console.log( data );
     
     //Load in GeoJSON data
-    d3.json("JPN_adm1_v2_simplified.json", function(json) {
+    d3.json("Japan.json", function(json) {
         
         //Merge the ag. data and GeoJSON
         //Loop through once for each density data value
