@@ -165,12 +165,12 @@ d3.csv("PopulationDensity.csv", function(data) {
         svgLegend.append("text")
                 .attr("id", "Legendlabel")
                 .attr("y", 0)
-                .attr("x", 200)
+                .attr("x", 160)
                 .attr("dy", "1em")
                 .attr("text-anchor", "middle")
                 .attr("fill", "black")
                 .attr("font-size", "12px")
-                .text("2015 Population Density (per km2)");
+                .text("2015 Population Density (Thousand per km2)");
         
         // Legend2 IncomePerCapita
         svgLegend.append("g")
