@@ -123,7 +123,7 @@ d3.csv("PopulationDensity.csv", function(data) {
                         return "#ccc";
                     }
                 })
-            .style("stroke", "white");
+            .style("stroke", "black");
         
         var IncomePerCapitaPath = svgIncome.selectAll("path")
             .data(json.features)
@@ -146,7 +146,7 @@ d3.csv("PopulationDensity.csv", function(data) {
                         return "#ccc";
                     }
                 })
-            .style("stroke", "white");
+            .style("stroke", "black");
         
         // Legend
         svgLegend.append("g")
