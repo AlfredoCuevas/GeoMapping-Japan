@@ -3,13 +3,6 @@ var margin = {left: 80, right: 80, top: 50, bottom: 50 },
     width = (960 * .8) - margin.left -margin.right,
     height = (500 * 1.5) - margin.top - margin.bottom;
 
-// SVG Legend
-var svgLegend = d3.select("body")
-            .append("svg")
-            .attr("class", "LegendSVG")
-            .attr("width", 800)
-            .attr("height", 100);
-
 //Define SVG body and groups
 var svg = d3.select("body")
             .append("svg")
@@ -21,6 +14,15 @@ var svgPop = svg.append("g")
 
 var svgIncome = svg.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// SVG Legend
+/* screen.width will make sure that the legend doesn't get
+   put on the same line as the japan map */
+var svgLegend = d3.select("body")
+            .append("svg")
+            .attr("class", "LegendSVG")
+            .attr("width", screen.width)
+            .attr("height", 100);
 
 
 
@@ -34,17 +36,15 @@ var projection = d3.geoMercator()
 var path = d3.geoPath()
                 .projection(projection);
 
-//Define quantize scale to sort data values into buckets of color
-//var color = d3.scaleLog()
-//                .range(['green', 'white', 'red'])
-//                .interpolate(d3.interpolateHcl);
+// Define Color Scale.
+// ScalePow is used for population Density
+// ScaleLinear is used for Income per Capita
 var color = d3.scalePow().exponent(-0.5)
-                .range(['#e5f5f9', '#66c2a4', '#00441b'])
-                .interpolate(d3.interpolateHcl);
+                .range(['#e5f5f9', '#66c2a4', '#00441b']);
 
 var color2 = d3.scaleLinear()
-                .range(['#efedf5','#9e9ac8','#3f007d'])
-                .interpolate(d3.interpolateHcl);
+                //.range(['#efedf5','#9e9ac8','#3f007d']);
+                .range(['green','yellow','red']); // I changed this because I thought it looked better
 
 //Load in agriculture data
 d3.csv("PopulationDensity.csv", function(data) {
